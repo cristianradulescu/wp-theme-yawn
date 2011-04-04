@@ -152,7 +152,14 @@ div.menu li {
 #main {
   background-color: #fff
 }
-
+#content,
+#content input,
+#content textarea {
+	font-size: 14px;
+}
+#content .entry-title {
+	font-style: italic;
+}
 
 /* =Asides
 -------------------------------------------------------------- */
