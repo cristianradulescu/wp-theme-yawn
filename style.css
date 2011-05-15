@@ -145,12 +145,20 @@ div.menu li {
 	color: #fff;
 }
 
+/* = Breadcrumbs (NavXT)
+-------------------------------------------------------------- */
+
+.breadcrumbs {
+  margin: 0 0 10px 20px;
+  line-height: 26px;
+}
 
 /* =Content
 -------------------------------------------------------------- */
 
 #main {
-  background-color: #fff
+  background-color: #fff;
+  padding: 10px 0 0 0;
 }
 #content,
 #content input,
