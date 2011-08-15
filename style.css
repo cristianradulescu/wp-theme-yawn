@@ -15,6 +15,18 @@ Template: twentyten
 /* =Layout
 -------------------------------------------------------------- */
 
+#container {
+	float: left;
+	margin: 0 -340px 0 0;
+	width: 100%;
+}
+#content {
+	margin: 0 330px 0 20px;
+}
+#primary,
+#secondary {
+	width: 320px;
+}
 
 /* =Fonts
 -------------------------------------------------------------- */
