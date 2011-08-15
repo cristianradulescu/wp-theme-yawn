@@ -70,6 +70,11 @@ code {
 #access .menu-header {
 	margin: 0 auto;
 }
+#branding {
+	margin: 0;
+	width: 50%;
+  float: left;
+}
 #wrapper {
 	background: transparent;
 }
@@ -97,10 +102,24 @@ body {
 /* =Header
 -------------------------------------------------------------- */
 
+#header {
+	padding: 0;
+}
+
+#site-title {
+	float: none;
+	width: 100%;
+}
+
 #site-title a,
 #site-description {
 	color: #fff;
   font-family: 'Rock Salt', Georgia, Arial, Serif;
+}
+
+#site-description {
+	float: none;
+	width: 100%;
 }
 
 /* This is the custom header image */
@@ -230,3 +249,12 @@ Resize images to fit the main content area.
   width: 904px;
 }
 
+
+/* == Ad spaces
+-------------------------------------------------------------- */
+
+#ad_space_header {
+  float: left;
+  width: 468px;
+  height: 60px;
+}
