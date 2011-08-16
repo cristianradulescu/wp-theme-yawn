@@ -168,11 +168,13 @@ div.menu li {
 	height: 41px;
 	padding: 0 18px;
 	color: #ccc;
-	background: url('images/navigation_s.png') no-repeat right top;
+}
+#access li {
+  background: url('images/navigation_s.png') no-repeat right top;
 }
 #access li:hover > a,
 #access ul ul :hover > a {
-	background:none;
+	background: none;
 	color: #fff;
 }
 
