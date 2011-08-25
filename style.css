@@ -1,8 +1,9 @@
 /*
 Theme Name: Yawn
-Theme URI: http://cristian-radulescu.ro/wp-theme-yawn
+Theme URI: http://cristian-radulescu.ro/yawn-wordpress-theme
 Description: TwentyTen child theme
-Author: the WordPress team; Cristian Radulescu
+Author: Cristian Radulescu
+Author URI: http://cristian-radulescu.ro/
 Version: 0.1
 License: GNU General Public License
 License URI: license.txt
@@ -10,7 +11,7 @@ Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-backgr
 Template: twentyten
 */
 
-/* =Paremt
+/* =Parent
 -------------------------------------------------------------- */
 @import url("../twentyten/style.css");
 
