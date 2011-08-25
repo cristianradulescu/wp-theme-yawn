@@ -5,14 +5,13 @@
  * Displays all of the <head> section and everything up till <div id="main">
  *
  * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
+ * @subpackage Yawn
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<title><?php
+  <head>
+  <meta charset="<?php bloginfo( 'charset' ); ?>" />
+  <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
 	 */
@@ -33,13 +32,11 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
 
 	?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+  <link rel="profile" href="http://gmpg.org/xfn/11" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+  <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css' />
-
-<?php
+  <?php
 	/* We add some JavaScript to pages with the comment form
 	 * to support sites with threaded comments (when in use).
 	 */
@@ -93,7 +90,9 @@
 			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
 				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
 				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
-				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+				<?php wp_nav_menu(array('container_class' => 'menu-header', 
+                                  'theme_location' => 'primary',
+              )); ?>
 			</div><!-- #access -->
 		</div><!-- #masthead -->
 	</div><!-- #header -->

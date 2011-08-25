@@ -10,7 +10,13 @@ Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-backgr
 Template: twentyten
 */
 
+/* =Paremt
+-------------------------------------------------------------- */
 @import url("../twentyten/style.css");
+
+/* =Google Fonts
+-------------------------------------------------------------- */
+@import url(http://fonts.googleapis.com/css?family=Oswald|Nunito);
 
 /* =Layout
 -------------------------------------------------------------- */
@@ -21,11 +27,12 @@ Template: twentyten
 	width: 100%;
 }
 #content {
-	margin: 0 330px 0 20px;
+	margin: 0 350px 0 20px;
 }
 #primary,
 #secondary {
-	width: 320px;
+	width: 300px;
+  margin: 0 20px 0 0;
 }
 
 /* =Fonts
@@ -38,7 +45,7 @@ textarea,
 #access .menu,
 #access div.menu ul,
 .widget-title {
-	font-family: "Lucida Sans Unicode","Lucida Grande",Verdana,Arial,Helvetica,sans-serif;
+	font-family: Arial, Helvetica, sans-serif ,Verdana,"Lucida Sans Unicode","Lucida Grande";
 }
 h3#comments-title,
 h3#reply-title,
@@ -62,10 +69,10 @@ h3#reply-title,
 .pingback p,
 .reply,
 .wp-caption-text {
-	font-family: Georgia,"Times New Roman",Times,serif;
+	font-family: Arial, Helvetica, sans-serif ,Verdana,"Lucida Sans Unicode","Lucida Grande";
 }
 input[type=submit] {
-	font-family: "Lucida Sans Unicode","Lucida Grande",Verdana,Arial,Helvetica,sans-serif;
+	font-family: Arial, Helvetica, sans-serif ,Verdana,"Lucida Sans Unicode","Lucida Grande";
 }
 pre {
 	font-family: "Courier 10 Pitch", Courier, monospace;
@@ -83,12 +90,19 @@ code {
 	margin: 0 auto;
 }
 #branding {
-	margin: 0;
-	width: 50%;
+	margin: 0 0 0 20px;
+	width: 450px;
   float: left;
 }
 #wrapper {
-	background: transparent;
+	background: #fff;
+  padding: 20px 0 0 0;
+  -moz-box-shadow: 0 3px 10px #333333;
+  -webkit-box-shadow: 0 3px 10px #333333;
+  -moz-border-top-left-radius: 5px;
+  -moz-border-top-right-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
 }
 
 /* Structure the footer area */
@@ -103,7 +117,8 @@ code {
 /* Main global 'theme' and typographic styles */
 body {
 /*	background: #f1f1f1;*/
-  background: url("images/bg_header.png") repeat-x scroll left top #303131;
+/*  background: url("images/bg_header.png") repeat-x scroll left top #303131;*/
+  background: #999;
   overflow-y: scroll;
 }
 
@@ -121,17 +136,21 @@ body {
 #site-title {
 	float: none;
 	width: 100%;
+  line-height: normal;
+  margin: 0;
 }
 
 #site-title a,
 #site-description {
-	color: #fff;
-  font-family: 'Rock Salt', Georgia, Arial, Serif;
+	color: #333;
+  font-family: Nunito, Arial, Helvetica;
+/*  text-shadow: #999 2px 2px;*/
 }
 
 #site-description {
 	float: none;
 	width: 100%;
+  margin: 0 0 18px 0;
 }
 
 /* This is the custom header image */
@@ -143,14 +162,23 @@ body {
 
 /* =Menu
 -------------------------------------------------------------- */
-
+#access {
+  background: transparent;
+}
 #access .menu-header,
 div.menu {
   margin-left: 0;
   height: 41px;
   width: 100%;
   background: url('images/navigation.png') repeat-x 0 -41px;
+/*  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  -moz-border-top-left-radius: 5px;
+  -moz-border-top-right-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;*/
 }
+
 #access .menu-header ul,
 div.menu ul,
 #access .menu-header li,
@@ -161,21 +189,83 @@ div.menu li {
 	padding: 0;
 	font-size: 13px;
 	line-height: 38px;
+}
 
+#access .menu-header ul {
+  width: 100%;
 }
 #access a {
   float: left;
 	height: 41px;
 	padding: 0 18px;
 	color: #ccc;
+  font-family: Oswald, Arial, Helvetica, sans-serif ,Verdana;
 }
 #access li {
   background: url('images/navigation_s.png') no-repeat right top;
 }
+
 #access li:hover > a,
 #access ul ul :hover > a {
 	background: none;
 	color: #fff;
+}
+
+#access li.right {
+  float: right;
+  margin: 0 10px 0 0;
+}
+
+#access .s {
+  margin-top: 7px;
+  padding: 3px 0 3px 10px;
+  width: 250px;
+}
+
+.s {
+  background: #F9F9F9 url(images/no-repeat.png) no-repeat 0 0;
+  color: #333333;
+  font-family: Arial, Tahoma, Verdana;
+  font-size: 11px;
+  margin: 6px 0 0 0;
+  padding: 6px 0 6px 10px;
+  float: left;
+  border: 1px solid #B2B2B2;
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  -moz-border-radius-topleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-background-clip: padding-box;
+  -webkit-background-origin: padding-box;
+}
+
+#access .searchsubmit {
+  margin-top: 0;
+}
+
+.searchsubmit {
+  background: #404040 url(images/no-repeat.png) no-repeat 0 -40px;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-family: Arial, Tahoma, Verdana;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 6px 0 0 0;
+  padding: 0;
+  height: 28px;
+  width: 28px;
+  text-indent: -9999px;
+  border: 1px solid #333333;
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -moz-border-radius-topright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -webkit-background-clip: padding-box;
+  -webkit-background-origin: padding-box;
 }
 
 /* = Breadcrumbs (NavXT)
@@ -199,7 +289,11 @@ div.menu li {
 	font-size: 14px;
 }
 #content .entry-title {
-	font-style: italic;
+  font-weight: normal;
+  font-family: Oswald, Arial, Helvetica, sans-serif ,Verdana;
+  border-bottom: 1px solid #333;
+  padding-bottom: 2px;
+  text-shadow: #ddd 2px 2px;
 }
 
 /* =Asides
@@ -240,10 +334,22 @@ Resize images to fit the main content area.
 /* =Widget Areas
 -------------------------------------------------------------- */
 
+#main .widget-area ul {
+  padding: 0;
+}
+
+#main .widget-area ul ul {
+  list-style-image: url(images/arrow-right.png);
+}
+
 .widget-title {
   padding-bottom: 3px;
   margin-bottom: 5px;
 	border-bottom: 1px solid #888;
+  font-family: Oswald, Arial, Tahoma, Verdana;
+  margin: 0 0 10px 0;
+  padding: 5px 0 5px 5px;
+  border-bottom: 1px solid #333;
 }
 
 
@@ -256,7 +362,7 @@ Resize images to fit the main content area.
 -------------------------------------------------------------- */
 
 #footer {
-	background: #fff;
+  background: #F7F7F7 url(images/no-repeat.png) no-repeat 0 -257px;
 }
 #colophon {
 	padding: 18px 18px;
@@ -270,4 +376,46 @@ Resize images to fit the main content area.
 #ad_space_header {
   float: left;
   width: 468px;
+}
+
+
+/* == Read more
+-------------------------------------------------------------- */
+
+.more-link-wrapper {
+  padding: 15px 0 0 0;
+  display: block;
+  text-align: right;
+}
+
+a:link.more-link, a:visited.more-link {
+color: #FFFFFF;
+}
+
+a.more-link {
+  background: #404040 url(images/repeat-x.png) repeat-x scroll 0 -92px;
+  display: inline-block;
+  padding: 5px 8px 5px 8px;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 10px;
+  line-height: 1;
+  position: relative;
+  cursor: pointer;
+  -webkit-box-shadow: 0 1px 3px #7F7F7F;
+  text-shadow: 0 -1px 1px #444444;
+  border: 1px solid #333333;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -webkit-background-clip: padding-box;
+  -webkit-background-origin: padding-box;
+  -moz-box-shadow: 0 1px 3px #7F7F7F;
+}
+
+.vertical-separator {
+  background: #F7F7F7 url(images/no-repeat.png) no-repeat 0 -257px;
+  overflow: hidden;
+/*  padding: 5px;*/
+/*  margin: 0 -5px 5px -5px;*/
 }

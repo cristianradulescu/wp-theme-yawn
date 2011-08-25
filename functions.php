@@ -36,6 +36,54 @@ function yawn_widgets_init() {
 add_action('widgets_init', 'yawn_widgets_init');
 
 /**
+ * Custom nav menu. Adds the search bar to menu bar
+ */
+function yawn_wp_nav_menu_items($items) {
+
+return $items.<<<SEARCH_FORM
+  <li class="right search">
+		<form method="get" class="searchform" action="http://demo.studiopress.com/amped/">
+			<input type="text" value="Search" name="s" class="s" onfocus="if (this.value == 'Search') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search';}">
+			<input type="submit" class="searchsubmit" value="Search">
+		</form>
+	</li>
+SEARCH_FORM;
+}
+add_action('wp_nav_menu_items', 'yawn_wp_nav_menu_items');
+
+/**
+ * Create "Continue reading" button
+ * 
+ * @param string $more
+ * @return string
+ */
+function yawn_auto_excerpt_more($more) {
+  remove_filter('excerpt_more', 'twentyten_auto_excerpt_more');
+  $permalink = get_permalink();
+  $msg = __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyten' );
+	return '<span class="more-link-wrapper">'
+          .'<a href="'.$permalink.'" class="more-link">'.$msg.'</a>'
+          .'</span>';
+}
+add_filter('excerpt_more', 'yawn_auto_excerpt_more', 9);
+
+/**
+ * Customize excerpt
+ * 
+ * @param string $output
+ * 
+ * @return string
+ */
+function yawn_custom_excerpt_more($output) {
+  remove_filter('get_the_excerpt', 'twentyten_custom_excerpt_more' );
+	if ( has_excerpt() && ! is_attachment() ) {
+		$output .= yawn_auto_excerpt_more('');
+	}
+	return $output;
+}
+add_filter('get_the_excerpt', 'yawn_custom_excerpt_more', 9 );
+
+/**
  * Yawn administration menu item
  * 
  * @return void
@@ -59,8 +107,7 @@ function yawn_admin() {
  * 
  * @return void
  */
-function yawn_google_analytics_wp_head()
-{
+function yawn_google_analytics_wp_head() {
   if (false !== get_option('yawn-google-analitycs-code')): ?>
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -75,3 +122,30 @@ function yawn_google_analytics_wp_head()
   <?php endif; 
 }
 add_action('wp_head', 'yawn_google_analytics_wp_head');
+
+/**
+ * Retrieve Digg search results
+ * 
+ * @param strin $term
+ * 
+ * @return array 
+ */
+function yawn_digg_search($term) {
+  set_include_path(get_include_path().':'.realpath(dirname(__FILE__).'/services/Services_Digg2/'));
+  require_once 'Services/Digg2.php';
+  
+  try {
+    $sd = new Services_Digg2;
+    $sd->setVersion('2.0');
+    $result = $sd->search->search(array(
+        'query' => $term,
+        'count' => 2,
+        'sort' => 'digg_count-desc',
+        'offset' => rand(1, 100),
+            ));
+  } catch (Exception $exc) {
+    return array();
+  }
+
+  return $result->stories;
+}
