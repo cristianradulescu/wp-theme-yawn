@@ -39,10 +39,11 @@ add_action('widgets_init', 'yawn_widgets_init');
  * Custom nav menu. Adds the search bar to menu bar
  */
 function yawn_wp_nav_menu_items($items) {
+$action = get_home_url();
 
 return $items.<<<SEARCH_FORM
   <li class="right search">
-		<form method="get" class="searchform" action="http://demo.studiopress.com/amped/">
+		<form method="get" class="searchform" action="{$action}">
 			<input type="text" value="Search" name="s" class="s" onfocus="if (this.value == 'Search') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search';}">
 			<input type="submit" class="searchsubmit" value="Search">
 		</form>
