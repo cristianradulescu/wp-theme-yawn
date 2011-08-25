@@ -172,12 +172,6 @@ div.menu {
   height: 41px;
   width: 100%;
   background: url('images/navigation.png') repeat-x 0 -41px;
-/*  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  -moz-border-top-left-radius: 5px;
-  -moz-border-top-right-radius: 5px;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;*/
 }
 
 #access .menu-header ul,
@@ -210,6 +204,16 @@ div.menu li {
 #access ul ul :hover > a {
 	background: none;
 	color: #fff;
+}
+#access ul ul.sub-menu :hover > a {
+	background: #333;
+	color: #fff;
+}
+
+#access ul ul {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
 }
 
 #access li.right {
