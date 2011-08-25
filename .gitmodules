@@ -1,0 +1,3 @@
+[submodule "services/Services_Digg2"]
+	path = services/Services_Digg2
+	url = git://github.com/digg/Services_Digg2.git
