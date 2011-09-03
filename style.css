@@ -117,12 +117,16 @@ code {
 
 /* Main global 'theme' and typographic styles */
 body {
-/*	background: #f1f1f1;*/
-/*  background: url("images/bg_header.png") repeat-x scroll left top #303131;*/
   background: #999;
   overflow-y: scroll;
 }
 
+a:link,
+a:active,
+a:visited,
+a:hover {
+  color: #0066cc;
+}
 
 /* Text meant only for screen readers */
 
@@ -310,14 +314,40 @@ div.menu li {
   text-shadow: #ddd 2px 2px;
 }
 
+#content .entry-title a:link,
+#content .entry-title a:visited,
+#content .entry-content a:link, 
+#content .entry-content a:visited {
+  
+  text-decoration: none;
+}
+
+#content .entry-title a:link,
+#content .entry-title a:visited {
+  color: #000;
+}
+
 #content .entry-content a:link, 
 #content .entry-content a:visited {
   color: #0066cc;
-  text-decoration: none;
 }
 
 #content .entry-content a:hover {
   text-decoration: underline;
+}
+
+#content .entry-title a:hover {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.entry-meta a:link, .entry-meta a:visited, 
+.entry-utility a:link, .entry-utility a:visited {
+  color: #888;
+}
+.entry-meta a:hover,
+.entry-utility a:hover {
+  color: #0066cc;
 }
 
 /* =Asides
@@ -348,6 +378,16 @@ Resize images to fit the main content area.
 /* =Navigation
 -------------------------------------------------------------- */
 
+.navigation a:link,
+.navigation a:visited {
+  color: #888;
+  text-decoration: none;
+}
+
+.navigation a:active,
+.navigation a:hover {
+  color: #0066cc;
+}
 
 
 /* =Comments
