@@ -51,30 +51,6 @@
     <div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'twentyten' ) . '</span>' ); ?></div>
   </div><!-- #nav-below -->
 
-  <?php 
-  //  disable this for now (work in progress)
-  if (false): ?>
-  <div id="digg_searches">
-    <?php foreach (get_the_category(get_the_ID()) as $category): ?>
-      <?php $digg_related_stories = yawn_digg_search($category->name); ?>
-      <?php if (!empty($digg_related_stories)) :?>
-          <?php foreach ($digg_related_stories as $story): ?>
-          <div id="post-<?php the_ID()?>-digg-stories" class="post-<?php the_ID() ?> post type-post status-publish format-standard hentry">
-            <h2 class="entry-title">
-              <a href="<?php echo $story->link ?>" rel="bookmark">
-                <?php echo $story->title ?>
-              </a>
-            </h2>
-            <div class="entry-content">
-              <?php echo $story->description; echo yawn_auto_excerpt_more('') ?>
-            </div> <!-- .entry-content -->
-          </div>
-          <?php endforeach ?>
-      <?php endif;
-    endforeach; ?>
-  </div>
-  <?php endif; ?>
-
   <?php comments_template( '', true ); ?>
 
 <?php endwhile; // end of the loop. ?>

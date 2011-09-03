@@ -32,16 +32,18 @@ function yawn_widgets_init() {
 		'before_title' => '<span style="display:none;">',
 		'after_title' => '</span>',
 	) );
-	// Header, located at the top of the page.
+  
+	// Above content, located below the menu.
 	register_sidebar( array(
 		'name' => __( 'Above Contet Widget Area', 'twentyten' ),
 		'id' => 'above-content-widget-area',
 		'description' => __( 'Above content widget area', 'twentyten' ),
 		'before_widget' => '',
 		'after_widget' => '',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<span style="display:none;">',
+		'after_title' => '</span>',
 	) );
+
 }
 add_action('widgets_init', 'yawn_widgets_init');
 
@@ -133,30 +135,3 @@ function yawn_google_analytics_wp_head() {
   <?php endif; 
 }
 add_action('wp_head', 'yawn_google_analytics_wp_head');
-
-/**
- * Retrieve Digg search results
- * 
- * @param strin $term
- * 
- * @return array 
- */
-function yawn_digg_search($term) {
-  set_include_path(get_include_path().':'.realpath(dirname(__FILE__).'/services/Services_Digg2/'));
-  require_once 'Services/Digg2.php';
-  
-  try {
-    $sd = new Services_Digg2;
-    $sd->setVersion('2.0');
-    $result = $sd->search->search(array(
-        'query' => $term,
-        'count' => 2,
-        'sort' => 'digg_count-desc',
-        'offset' => rand(1, 100),
-            ));
-  } catch (Exception $exc) {
-    return array();
-  }
-
-  return $result->stories;
-}
