@@ -32,6 +32,16 @@ function yawn_widgets_init() {
 		'before_title' => '<span style="display:none;">',
 		'after_title' => '</span>',
 	) );
+	// Header, located at the top of the page.
+	register_sidebar( array(
+		'name' => __( 'Above Contet Widget Area', 'twentyten' ),
+		'id' => 'above-content-widget-area',
+		'description' => __( 'Above content widget area', 'twentyten' ),
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '',
+		'after_title' => '',
+	) );
 }
 add_action('widgets_init', 'yawn_widgets_init');
 

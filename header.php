@@ -103,3 +103,11 @@
       bcn_display();
     endif; ?>
     </div>
+    
+    <?php
+    // Above content space for widgets
+    if ( is_active_sidebar( 'above-content-widget-area' ) ) : ?>
+      <div style="text-align: center">
+        <?php dynamic_sidebar( 'above-content-widget-area' ); ?>
+      </div><!-- #ad_space_header -->
+    <?php endif; ?>
