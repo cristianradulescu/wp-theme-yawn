@@ -81,9 +81,9 @@
       <?php
       // Header space for widgets
       if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
-        <div id="ad_space_header">
+        <div id="ad-container-header">
           <?php dynamic_sidebar( 'header-widget-area' ); ?>
-        </div><!-- #ad_space_header -->
+        </div><!-- #ad-container-header -->
       <?php endif; ?>
 
 			<div id="access" role="navigation">
@@ -107,7 +107,7 @@
     <?php
     // Above content space for widgets
     if ( is_active_sidebar( 'above-content-widget-area' ) ) : ?>
-      <div style="text-align: center">
+      <div id="ad-container-above-content">
         <?php dynamic_sidebar( 'above-content-widget-area' ); ?>
-      </div><!-- #ad_space_header -->
+      </div><!-- #ad-container-above-content -->
     <?php endif; ?>

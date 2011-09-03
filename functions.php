@@ -43,7 +43,17 @@ function yawn_widgets_init() {
 		'before_title' => '<span style="display:none;">',
 		'after_title' => '</span>',
 	) );
-
+  
+	// Below post
+	register_sidebar( array(
+		'name' => __( 'Below Post Widget Area', 'twentyten' ),
+		'id' => 'below-post-widget-area',
+		'description' => __( 'Below post widget area', 'twentyten' ),
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<span style="display:none;">',
+		'after_title' => '</span>',
+	) );
 }
 add_action('widgets_init', 'yawn_widgets_init');
 

@@ -281,6 +281,15 @@ div.menu li {
   line-height: 26px;
 }
 
+.breadcrumbs a:link, .breadcrumbs a:visited, .breadcrumbs a:active {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
 /* =Content
 -------------------------------------------------------------- */
 
@@ -295,10 +304,20 @@ div.menu li {
 }
 #content .entry-title {
   font-weight: normal;
-  font-family: Oswald, Arial, Helvetica, sans-serif ,Verdana;
+  font-family: Arial, Helvetica, sans-serif ,Verdana;
   border-bottom: 1px solid #333;
   padding-bottom: 2px;
   text-shadow: #ddd 2px 2px;
+}
+
+#content .entry-content a:link, 
+#content .entry-content a:visited {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+#content .entry-content a:hover {
+  text-decoration: underline;
 }
 
 /* =Asides
@@ -350,11 +369,19 @@ Resize images to fit the main content area.
 .widget-title {
   padding-bottom: 3px;
   margin-bottom: 5px;
-	border-bottom: 1px solid #888;
-  font-family: Oswald, Arial, Tahoma, Verdana;
+  font-family:  Arial, Tahoma, Verdana;
   margin: 0 0 10px 0;
   padding: 5px 0 5px 5px;
   border-bottom: 1px solid #333;
+}
+
+.widget-area a:link, 
+.widget-area a:visited {
+  color: #0066cc;
+}
+
+.widget-area a:hover {
+  text-decoration: underline;
 }
 
 
@@ -375,33 +402,40 @@ Resize images to fit the main content area.
 }
 
 
-/* == Ad spaces
+/* == Ad containers
 -------------------------------------------------------------- */
 
-#ad_space_header {
+#ad-container-header {
   float: left;
   width: 468px;
+}
+
+#ad-container-above-content {
+  margin-left: 20px;
+}
+
+#ad-container-below-post {
 }
 
 
 /* == Read more
 -------------------------------------------------------------- */
 
-.more-link-wrapper {
+#content .entry-content .more-link-wrapper {
   padding: 15px 0 0 0;
   display: block;
   text-align: right;
 }
 
-a:link.more-link, a:visited.more-link {
-color: #FFFFFF;
+#content .entry-content .more-link-wrapper a:visited.more-link {
+  color: #fff;
 }
 
-a.more-link {
+#content .entry-content .more-link-wrapper a:link.more-link {
   background: #404040 url(images/repeat-x.png) repeat-x scroll 0 -92px;
   display: inline-block;
   padding: 5px 8px 5px 8px;
-  color: #FFFFFF;
+  color: #fff;
   text-decoration: none;
   font-size: 10px;
   line-height: 1;
@@ -409,7 +443,6 @@ a.more-link {
   cursor: pointer;
   -webkit-box-shadow: 0 1px 3px #7F7F7F;
   text-shadow: 0 -1px 1px #444444;
-  border: 1px solid #333333;
   border-radius: 6px;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
