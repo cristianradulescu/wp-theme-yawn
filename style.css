@@ -281,17 +281,14 @@ div.menu li {
 -------------------------------------------------------------- */
 
 .breadcrumbs {
-  margin: 0 0 10px 20px;
-  line-height: 26px;
+  margin: 0 0 0 20px;
+/*  line-height: 26px;*/
 }
 
 .breadcrumbs a:link, .breadcrumbs a:visited, .breadcrumbs a:active {
   color: #0066cc;
-  text-decoration: none;
-}
-
-.breadcrumbs a:hover {
   text-decoration: underline;
+  font-weight: bold;
 }
 
 /* =Content
@@ -451,7 +448,8 @@ Resize images to fit the main content area.
 }
 
 #ad-container-above-content {
-  margin-left: 20px;
+  /* adsense has a 4px padding */
+  margin-left: 16px;
 }
 
 #ad-container-below-post {
