@@ -459,17 +459,17 @@ Resize images to fit the main content area.
 /* == Read more
 -------------------------------------------------------------- */
 
-#content .entry-content .more-link-wrapper {
+#content .more-link-wrapper {
   padding: 15px 0 0 0;
   display: block;
   text-align: right;
 }
 
-#content .entry-content .more-link-wrapper a:visited.more-link {
+#content .more-link-wrapper a:visited.more-link {
   color: #fff;
 }
 
-#content .entry-content .more-link-wrapper a:link.more-link {
+#content .more-link-wrapper a:link.more-link {
   background: #404040 url(images/repeat-x.png) repeat-x scroll 0 -92px;
   display: inline-block;
   padding: 5px 8px 5px 8px;
@@ -492,6 +492,4 @@ Resize images to fit the main content area.
 .vertical-separator {
   background: #F7F7F7 url(images/no-repeat.png) no-repeat 0 -257px;
   overflow: hidden;
-/*  padding: 5px;*/
-/*  margin: 0 -5px 5px -5px;*/
 }
