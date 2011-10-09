@@ -15,6 +15,18 @@
  * @subpackage Yawn
  */
 
+/**
+ * Prints HTML with meta information for the current post-date/time and author.
+ * 
+ * @return void
+ */
+function yawn_posted_on() {
+  ?>
+  <span class="entry-date"><?php echo get_the_date() ?></span>
+  <span class="meta-sep">|</span>
+  <span class="comments-link"><?php comments_popup_link( __( 'No comments', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ) ?></span>
+  <?php
+}
 
 /**
  * Register widgetized areas
