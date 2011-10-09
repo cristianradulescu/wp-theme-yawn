@@ -22,6 +22,14 @@
       <?php the_content(); ?>
       <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
     </div><!-- .entry-content -->
+    
+    <?php
+    // Below post space for widgets
+    if ( is_active_sidebar( 'below-post-widget-area' ) ) : ?>
+      <div id="ad-container-below-post">
+        <?php dynamic_sidebar( 'below-post-widget-area' ); ?>
+      </div><!-- #ad-container-below-post -->
+    <?php endif; ?>
 
     <?php if ( get_the_author_meta( 'description' ) ) : // If a user has filled out their description, show a bio on their entries  ?>
     <div id="entry-author-info">
@@ -40,14 +48,6 @@
     </div><!-- #entry-author-info -->
     <?php endif; ?>
 
-    <?php
-    // Below post space for widgets
-    if ( is_active_sidebar( 'below-post-widget-area' ) ) : ?>
-      <div id="ad-container-below-post">
-        <?php dynamic_sidebar( 'below-post-widget-area' ); ?>
-      </div><!-- #ad-container-below-post -->
-    <?php endif; ?>
-    
     <div class="entry-utility">
       <?php twentyten_posted_in(); ?>
       <?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="edit-link">', '</span>' ); ?>
