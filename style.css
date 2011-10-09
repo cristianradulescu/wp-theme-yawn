@@ -379,6 +379,13 @@ Resize images to fit the main content area.
 /* =Navigation
 -------------------------------------------------------------- */
 
+.navigation {
+	color: #888;
+	font-size: 12px;
+	line-height: 18px;
+	overflow: hidden;
+}
+
 .navigation a:link,
 .navigation a:visited {
   color: #888;
@@ -388,6 +395,29 @@ Resize images to fit the main content area.
 .navigation a:active,
 .navigation a:hover {
   color: #0066cc;
+}
+
+.nav-previous {
+	float: left;
+	width: 50%;
+}
+.nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+#nav-above {
+	margin: 0 0 18px 0;
+}
+#nav-above {
+	display: none;
+}
+.paged #nav-above,
+.single #nav-above {
+	display: block;
+}
+#nav-below {
+	margin: -18px 0 10px 0;
 }
 
 
@@ -475,7 +505,7 @@ Resize images to fit the main content area.
 }
 
 #content .more-link-wrapper a:link.more-link {
-  background: #404040; /* url(images/repeat-x.png) repeat-x scroll 0 -92px; */
+  background: #404040;
   display: inline-block;
   padding: 5px 8px 5px 8px;
   color: #fff;
@@ -484,14 +514,6 @@ Resize images to fit the main content area.
   line-height: 12px;
   position: relative;
   cursor: pointer;
-/*  -webkit-box-shadow: 0 1px 3px #7F7F7F;*/
-/*  text-shadow: 0 -1px 1px #444444;*/
-/*  border-radius: 6px;*/
-/*  -moz-border-radius: 6px;*/
-/*  -webkit-border-radius: 6px;*/
-/*  -webkit-background-clip: padding-box;*/
-/*  -webkit-background-origin: padding-box;*/
-/*  -moz-box-shadow: 0 1px 3px #7F7F7F;*/
 }
 
 .vertical-separator {

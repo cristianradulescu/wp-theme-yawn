@@ -1,4 +1,11 @@
 <?php
+/**
+ * The theme administration page
+ *
+ * @package WordPress
+ * @subpackage Yawn
+ * @author Cristian Radulescu
+ */
 
 $title = __('Yawn Dashboard');
 $parent_file = 'themes.php';
