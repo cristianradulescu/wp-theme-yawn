@@ -10,10 +10,28 @@
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
   <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    
+    <?php
+    // Above post space for widgets
+    if ( is_active_sidebar( 'above-post-widget-area' ) ) : ?>
+      <div id="ad-container-above-post">
+        <?php dynamic_sidebar( 'above-post-widget-area' ); ?>
+      </div><!-- #ad-container-above-post -->
+    <?php endif; ?>
+    
     <h1 class="entry-title"><?php the_title(); ?></h1>
     <div class="entry-meta">
       <?php yawn_posted_on(); ?>
     </div><!-- .entry-meta -->
+    
+    <?php
+    // Above post content space for widgets
+    if ( is_active_sidebar( 'above-post-content-widget-area' ) ) : ?>
+      <div id="ad-container-above-post-content">
+        <?php dynamic_sidebar( 'above-post-content-widget-area' ); ?>
+      </div><!-- #ad-container-above-post-content -->
+    <?php endif; ?>
+    
     <div class="entry-content">
       <?php the_content(); ?>
       <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>

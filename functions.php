@@ -47,9 +47,31 @@ function yawn_widgets_init() {
   
 	// Above content, located below the menu.
 	register_sidebar( array(
-		'name' => __( 'Above Contet Widget Area', 'twentyten' ),
+		'name' => __( 'Above Content Widget Area', 'twentyten' ),
 		'id' => 'above-content-widget-area',
 		'description' => __( 'Above content widget area', 'twentyten' ),
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<span style="display:none;">',
+		'after_title' => '</span>',
+	) );
+  
+	// Above post
+	register_sidebar( array(
+		'name' => __( 'Above Post Widget Area', 'twentyten' ),
+		'id' => 'above-post-widget-area',
+		'description' => __( 'Above post widget area', 'twentyten' ),
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<span style="display:none;">',
+		'after_title' => '</span>',
+	) );
+  
+	// Above post content
+	register_sidebar( array(
+		'name' => __( 'Above Post Content Widget Area', 'twentyten' ),
+		'id' => 'above-post-content-widget-area',
+		'description' => __( 'Above post content widget area', 'twentyten' ),
 		'before_widget' => '',
 		'after_widget' => '',
 		'before_title' => '<span style="display:none;">',
