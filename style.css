@@ -87,18 +87,28 @@ code {
 -------------------------------------------------------------- */
 
 /* The main theme structure */
+#access,
+#access .menu-header,
+div.menu,
+#branding,
+#main,
+#wrapper {
+    width: 1200px;
+}
+
 #access .menu-header {
 	margin: 0 auto;
 }
 #branding {
-	margin: 0 0 0 20px;
-	width: 450px;
+  margin: 0 0 0 20px;
+  width: 690px;  
   float: left;
 }
 #wrapper {
-	background: #fff;
+  background: #fff;
   padding: 20px 0 0 0;
   margin-top: 0;
+  width: 1200px;
   -moz-box-shadow: 0 3px 10px #333333;
   -webkit-box-shadow: 0 3px 10px #333333;
 }
@@ -467,8 +477,8 @@ Resize images to fit the main content area.
   margin-bottom: 0;
 }
 #colophon {
-	padding: 18px 18px;
-  width: 904px;
+  padding: 18px 18px;
+  width: 1164px;
 }
 
 
