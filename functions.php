@@ -15,9 +15,32 @@
  * @subpackage Yawn
  */
 
+// prevent parent theme setup
+function twentyten_setup() {
+
+}
+
+/** Tell WordPress to run yawn_setup() when the 'after_setup_theme' hook is run. */
+add_action( 'after_setup_theme', 'yawn_setup' );
+
+function yawn_setup() {
+
+  // This theme styles the visual editor with editor-style.css to match the theme style.
+  add_editor_style();
+
+  // Add default posts and comments RSS feed links to head
+	add_theme_support( 'automatic-feed-links' );
+
+  // This theme uses wp_nav_menu() in one location.
+	register_nav_menus( array(
+		'primary' => __( 'Primary Navigation', 'yawn' ),
+	) );
+
+}
+
 /**
  * Prints HTML with meta information for the current post-date/time and author.
- * 
+ *
  * @return void
  */
 function yawn_posted_on() {
@@ -44,7 +67,7 @@ function yawn_widgets_init() {
 		'before_title' => '<span style="display:none;">',
 		'after_title' => '</span>',
 	) );
-  
+
 	// Above content, located below the menu.
 	register_sidebar( array(
 		'name' => __( 'Above Content Widget Area', 'twentyten' ),
@@ -55,7 +78,7 @@ function yawn_widgets_init() {
 		'before_title' => '<span style="display:none;">',
 		'after_title' => '</span>',
 	) );
-  
+
 	// Above post
 	register_sidebar( array(
 		'name' => __( 'Above Post Widget Area', 'twentyten' ),
@@ -66,7 +89,7 @@ function yawn_widgets_init() {
 		'before_title' => '<span style="display:none;">',
 		'after_title' => '</span>',
 	) );
-  
+
 	// Above post content
 	register_sidebar( array(
 		'name' => __( 'Above Post Content Widget Area', 'twentyten' ),
@@ -77,7 +100,7 @@ function yawn_widgets_init() {
 		'before_title' => '<span style="display:none;">',
 		'after_title' => '</span>',
 	) );
-  
+
 	// Below post
 	register_sidebar( array(
 		'name' => __( 'Below Post Widget Area', 'twentyten' ),
@@ -110,7 +133,7 @@ add_action('wp_nav_menu_items', 'yawn_wp_nav_menu_items');
 
 /**
  * Create "Continue reading" button
- * 
+ *
  * @param string $more
  * @return string
  */
@@ -126,9 +149,9 @@ add_filter('excerpt_more', 'yawn_auto_excerpt_more', 9);
 
 /**
  * Customize excerpt
- * 
+ *
  * @param string $output
- * 
+ *
  * @return string
  */
 function yawn_custom_excerpt_more($output) {
@@ -142,7 +165,7 @@ add_filter('get_the_excerpt', 'yawn_custom_excerpt_more', 9 );
 
 /**
  * Yawn administration menu item
- * 
+ *
  * @return void
  */
 function yawn_admin_menu() {
@@ -152,7 +175,7 @@ add_action('admin_menu', 'yawn_admin_menu');
 
 /**
  * Include the administration page
- * 
+ *
  * @return void
  */
 function yawn_admin() {
@@ -161,7 +184,7 @@ function yawn_admin() {
 
 /**
  * Add Google Analytics javascript is the code was set
- * 
+ *
  * @return void
  */
 function yawn_google_analytics_wp_head() {
@@ -176,6 +199,6 @@ function yawn_google_analytics_wp_head() {
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
-  <?php endif; 
+  <?php endif;
 }
 add_action('wp_head', 'yawn_google_analytics_wp_head');

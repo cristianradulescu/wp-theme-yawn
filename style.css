@@ -101,12 +101,12 @@ div.menu,
 }
 #branding {
   margin: 0 0 0 20px;
-  width: 690px;  
+  width: 690px;
   float: left;
 }
 #wrapper {
   background: #fff;
-  padding: 20px 0 0 0;
+  padding: 0;
   margin-top: 0;
   width: 1200px;
   -moz-box-shadow: 0 3px 10px #333333;
@@ -317,9 +317,9 @@ div.menu li {
 
 #content .entry-title a:link,
 #content .entry-title a:visited,
-#content .entry-content a:link, 
+#content .entry-content a:link,
 #content .entry-content a:visited {
-  
+
   text-decoration: none;
 }
 
@@ -328,7 +328,7 @@ div.menu li {
   color: #000;
 }
 
-#content .entry-content a:link, 
+#content .entry-content a:link,
 #content .entry-content a:visited {
   color: #0066cc;
 }
@@ -350,7 +350,7 @@ div.menu li {
 	margin: 0;
 }
 
-.entry-meta a:link, .entry-meta a:visited, 
+.entry-meta a:link, .entry-meta a:visited,
 .entry-utility a:link, .entry-utility a:visited {
   color: #888;
 }
@@ -454,7 +454,7 @@ Resize images to fit the main content area.
   border-bottom: 1px solid #333;
 }
 
-.widget-area a:link, 
+.widget-area a:link,
 .widget-area a:visited {
   color: #0066cc;
 }
