@@ -557,7 +557,7 @@ Resize images to fit the main content area.
 #access a.twitter:hover,
 #access a.twitter:visited,
 #access a.twitter:focus {
-  background-position: -48px 7px;
+  background-position: -24px 7px;
 }
 
 #access a.github,
@@ -565,7 +565,7 @@ Resize images to fit the main content area.
 #access a.github:hover,
 #access a.github:visited,
 #access a.github:focus {
-  background-position: -24px 7px;
+  background-position: -48px 7px;
 }
 
 #access a.linkedin,
