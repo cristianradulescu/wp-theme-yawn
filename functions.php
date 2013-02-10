@@ -120,16 +120,46 @@ add_action('widgets_init', 'yawn_widgets_init');
 function yawn_wp_nav_menu_items($items) {
 $action = get_home_url();
 
-return $items.<<<SEARCH_FORM
+$value = isset($_GET['s']) ? $_GET['s'] : 'Search';
+$items = $items.<<<SEARCH_FORM
   <li class="right search">
 		<form method="get" class="searchform" action="{$action}">
-			<input type="text" value="Search" name="s" class="s" onfocus="if (this.value == 'Search') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search';}">
+			<input type="search" value="$value" name="s" class="s" onfocus="if (this.value == 'Search') {this.value = '';}" >
 			<input type="submit" class="searchsubmit" value="Search">
 		</form>
 	</li>
 SEARCH_FORM;
+
+foreach (yawn_get_social_networks() as $social_network_id => $social_network_name) {
+  if (get_option('yawn-show-'.$social_network_id.'-social-icon', 'no') == 'yes') {
+    $linkedin_url = get_option('yawn-'.$social_network_id.'-url', '#');
+    $items = $items.<<<LINKEDIN
+<li class="right"><a href="$linkedin_url" class="social-icon $social_network_id" target="_blank"></a></li>
+LINKEDIN;
+  }
+}
+
+if (get_option('yawn-show-rss-social-icon', 'no') == 'yes') {
+  $rss_url = get_feed_link();
+  $items = $items.<<<RSS
+<li class="right"><a href="$rss_url" class="social-icon rss"></a></li>
+RSS;
+}
+
+    return $items;
+
 }
 add_action('wp_nav_menu_items', 'yawn_wp_nav_menu_items');
+
+function yawn_get_social_networks() {
+  return array(
+    'linkedin' => 'LinkedIn',
+    'github' => 'Github',
+    'twitter' => 'Twitter',
+  );
+}
+
+//add_filter('yawn_get_social_networks', $function_to_add)
 
 /**
  * Create "Continue reading" button

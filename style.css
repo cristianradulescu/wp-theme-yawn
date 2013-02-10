@@ -529,3 +529,49 @@ Resize images to fit the main content area.
   background: #F7F7F7 url(images/no-repeat.png) no-repeat 0 -257px;
   overflow: hidden;
 }
+
+
+/* == Social icons
+-------------------------------------------------------------- */
+#access a.social-icon,
+#access a.social-icon:active,
+#access a.social-icon:hover,
+#access a.social-icon:visited,
+#access a.social-icon:focus {
+  background-image: url('images/social_icons.png');
+  background-repeat: no-repeat;
+  width: 24px;
+  padding: 0;
+}
+
+#access a.rss,
+#access a.rss:active,
+#access a.rss:hover,
+#access a.rss:visited,
+#access a.rss:focus {
+  background-position: 0px 7px;
+}
+
+#access a.twitter,
+#access a.twitter:active,
+#access a.twitter:hover,
+#access a.twitter:visited,
+#access a.twitter:focus {
+  background-position: -48px 7px;
+}
+
+#access a.github,
+#access a.github:active,
+#access a.github:hover,
+#access a.github:visited,
+#access a.github:focus {
+  background-position: -24px 7px;
+}
+
+#access a.linkedin,
+#access a.linkedin:active,
+#access a.linkedin:hover,
+#access a.linkedin:visited,
+#access a.linkedin:focus {
+  background-position: -72px 7px;
+}
